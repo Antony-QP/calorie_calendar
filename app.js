@@ -12,6 +12,9 @@ const tableData = document.querySelector('#table-data')
 
 // Event Listeners
 form.addEventListener('submit', addCalories)
+// Event Listener for delete
+
+
 
 
 // Add calorie data
@@ -33,8 +36,18 @@ function addCalories(e) {
       `
     <td>${today}</td>
     <td>${totalCal}</<td>
+    <td><a href="#" class="delete">X</a></td>
     `
     tableData.appendChild(tableRow)
     e.preventDefault();
   }
 }
+
+// Delete row 
+deleteRow = function (e) {
+  if (e.target.className === 'delete') {
+    e.target.parentElement.parentElement.remove();
+  }
+}
+
+document.getElementById('table-data').addEventListener('click', deleteRow)
