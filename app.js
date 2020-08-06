@@ -7,20 +7,34 @@ const dailyAllowance = document.querySelector('#daily-allowance');
 const breakfastCal = document.querySelector('#breakfast-cal');
 const lunchCal = document.querySelector('#breakfast-cal');
 const dinnerCal = document.querySelector('#breakfast-cal');
+const form = document.querySelector("#form-info");
+const tableData = document.querySelector('#table-data')
 
 // Event Listeners
-document.querySelector('.button').addEventListener('click', function (e) {
-  console.log(
-    `<ul>
-    <li>${sex.value}</<li>
-    <li>${name.value}</<li>
-    <li>${activityLevel.value}</<li>
-    <li>${age}</<li>
-    <li>${dailyAllowance.value}</<li>
-    <li>${breakfastCal.value}</<li>
-    <li>${lunchCal.value}</<li>
-    <li>${dinnerCal.value}</<li>
-    </ul>`
-  )
-  e.preventDefault();
-})
+form.addEventListener('submit', addCalories)
+
+
+// Add calorie data
+function addCalories(e) {
+  if (sex.value === '' || name.value === '' || activityLevel.value === '' || age === '' || dailyAllowance.value === '' || breakfastCal.value === '' || lunchCal.value === '' || dinnerCal.value === '') {
+    console.log("Please fill all necessary fields")
+  } else {
+    // Create table row
+    const tableRow = document.createElement('tr');
+    // Log Date
+    let today = new Date();
+    today = today.toDateString()
+    // Calculate total calorie consumption
+    let totalCal = parseFloat(breakfastCal.value) + parseFloat(lunchCal.value) + parseFloat(dinnerCal.value);
+    // Use API to check calorie intake (next step)
+
+    // Append table row to table
+    tableRow.innerHTML =
+      `
+    <td>${today}</td>
+    <td>${totalCal}</<td>
+    `
+    tableData.appendChild(tableRow)
+    e.preventDefault();
+  }
+}
