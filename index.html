@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Calorie Counter</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.min.css
+  ">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="form-container">
+      <form>
+        <!-- Basic information -->
+        <!-- Sex -->
+        <div class="row">
+          <div class="three columns">
+            <label for="name">Sex</label>
+            <select id="sex" class="u-full-width" placeholder="sex">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <!-- Name -->
+          <div class="row">
+            <div class="three columns">
+              <label for="name">Name</label>
+              <input class="u-full-width" type="text" placeholder="input name" id="name">
+            </div>
+            <!-- Activity Level -->
+            <div class="row">
+              <div class="three columns">
+                <label for="activity-level">Level of Activity</label>
+                <select id="activity-level" class="u-full-width">
+                  <option value="sedentary">Sedentary</option>
+                  <option value="active">Active</option>
+                  <option value="very-active">Very Active</option>
+                </select>
+              </div>
+              <!-- Age -->
+              <div class="row">
+                <div class="three columns">
+                  <label for="daily-allowance">Age</label>
+                  <input class="u-full-width" type="text" placeholder="leave blank" id="daily-allowance">
+                </div>
+                <!-- Daily allowance -->
+                <div class="row">
+                  <div class="three columns">
+                    <label for="daily-allowance">Daily Allowance</label>
+                    <input class="u-full-width" type="text" placeholder="leave blank" id="daily-allowance">
+                  </div>
+                  <!-- Breakfast -->
+                  <div class="row">
+                    <div class="three columns">
+                      <label for="breakfast-calories">Breakfast</label>
+                      <input class="u-full-width" type="text" placeholder="input number of calories" id="breakfast-cal">
+                    </div>
+                    <!-- Lunch -->
+                    <div class="row">
+                      <div class="three columns">
+                        <label for="lunch-calories">Lunch</label>
+                        <input class="u-full-width" type="text" placeholder="input number of calories" id="lunch-cal">
+                      </div>
+                      <!-- Dinner -->
+                      <div class="row">
+                        <div class="three columns">
+                          <label for="dinner-calories">Dinner</label>
+                          <input class="u-full-width" type="text" placeholder="input number of calories"
+                            id="dinner-cal">
+                        </div>
+                      </div>
+                      <a href="#" class="button">Submit</a>
+      </form>
+    </div>
+
+    <!-- Table of results -->
+
+    <table class="u-full-width">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Total calorie consumption</th>
+          <th>Advised intake for user</th>
+          <th>Deficit/Surplus</th>
+        </tr>
+      </thead>
+    </table>
+
+    <script src="app.js"></script>
+</body>
+</div>
+
+</html>
