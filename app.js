@@ -1,17 +1,17 @@
 // Variables
-const sex = document.querySelector('#sex');
-const name = document.querySelector('#name');
-const activityLevel = document.querySelector('#activity-level');
-const age = document.querySelector('#age');
-const dailyAllowance = document.querySelector('#daily-allowance');
-const breakfastCal = document.querySelector('#breakfast-cal');
-const lunchCal = document.querySelector('#breakfast-cal');
-const dinnerCal = document.querySelector('#breakfast-cal');
-const form = document.querySelector("#form-info");
-const tableData = document.querySelector('#table-data')
+// const sex = document.querySelector('#sex');
+// const name = document.querySelector('#name');
+// const activityLevel = document.querySelector('#activity-level');
+// const age = document.querySelector('#age');
+// const dailyAllowance = document.querySelector('#daily-allowance');
+// const breakfastCal = document.querySelector('#breakfast-cal');
+// const lunchCal = document.querySelector('#breakfast-cal');
+// const dinnerCal = document.querySelector('#breakfast-cal');
+// const form = document.querySelector("#form-info");
+// const tableData = document.querySelector('#table-data')
 
 // Event Listeners
-form.addEventListener('submit', addCalories)
+// form.addEventListener('submit', addCalories)
 // Event Listener for delete
 
 

@@ -35,7 +35,7 @@
             <div class="row">
               <div class="three columns">
                 <label for="activity-level">Level of Activity</label>
-                <select id="activity-level" class="u-full-width">
+                <select id="activity" class="u-full-width">
                   <option value="sedentary">Sedentary</option>
                   <option value="active">Active</option>
                   <option value="very-active">Very Active</option>
@@ -44,33 +44,32 @@
               <!-- Age -->
               <div class="row">
                 <div class="three columns">
-                  <label for="daily-allowance">Age</label>
-                  <input class="u-full-width" type="text" placeholder="leave blank" id="daily-allowance">
+                  <label for="age">Age</label>
+                  <input class="u-full-width" type="text" placeholder="leave blank" id="age">
                 </div>
                 <!-- Daily allowance -->
                 <div class="row">
                   <div class="three columns">
                     <label for="daily-allowance">Daily Allowance</label>
-                    <input class="u-full-width" type="text" placeholder="leave blank" id="daily-allowance">
+                    <input class="u-full-width" type="text" placeholder="leave blank" id="allowance">
                   </div>
                   <!-- Breakfast -->
                   <div class="row">
                     <div class="three columns">
                       <label for="breakfast-calories">Breakfast</label>
-                      <input class="u-full-width" type="text" placeholder="input number of calories" id="breakfast-cal">
+                      <input class="u-full-width" type="text" placeholder="input number of calories" id="breakfast">
                     </div>
                     <!-- Lunch -->
                     <div class="row">
                       <div class="three columns">
                         <label for="lunch-calories">Lunch</label>
-                        <input class="u-full-width" type="text" placeholder="input number of calories" id="lunch-cal">
+                        <input class="u-full-width" type="text" placeholder="input number of calories" id="lunch">
                       </div>
                       <!-- Dinner -->
                       <div class="row">
                         <div class="three columns">
                           <label for="dinner-calories">Dinner</label>
-                          <input class="u-full-width" type="text" placeholder="input number of calories"
-                            id="dinner-cal">
+                          <input class="u-full-width" type="text" placeholder="input number of calories" id="dinner">
                         </div>
                       </div>
                       <input type="submit" value="submit">
@@ -94,6 +93,7 @@
     </table>
 
     <script src="app.js"></script>
+    <script src="constructors.js"></script>
 </body>
 </div>
 
