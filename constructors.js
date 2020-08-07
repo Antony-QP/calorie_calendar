@@ -160,8 +160,7 @@ class Store {
 
     posts.forEach(function (post, index) {
       if (post.id === index) {
-        console.log(post.id);
-        posts.splice(post.id, 1);
+        localStorage.removeItem(this);
       }
     });
     localStorage.setItem('posts', JSON.stringify(posts))
@@ -178,7 +177,7 @@ document.getElementById("table-data").addEventListener("click", function (e) {
   // Delete book
   ui.deleteRow(e.target);
   ui.showAlert("Day has been deleted", "success");
-  Store.removePost();
+  Store.removePost(e.target);
   // Remove from local storage
   e.preventDefault();
 });
