@@ -47,15 +47,14 @@ UI.prototype.addPostToList = function (post) {
     <td>${today}</td>
     <td>${totalCal}</<td>
     <td id="postid">${post.id}</<td>
-    <td><a href="#" class="delete">X</a></td>
     `;
   tableData.appendChild(tableRow);
 };
 
 // Delete Row Function
 UI.prototype.deleteRow = function (target) {
-  if (target.className === "delete") {
-    target.parentElement.parentElement.remove();
+  if (target.className === "button-primary") {
+    tableData.innerHTML = '';
   }
   // console.log(target.parentElement.parentElement.childNodes[4])
 };
@@ -156,14 +155,7 @@ class Store {
 
   // Remove posts
   static removePost() {
-    const posts = Store.getPosts();
-
-    posts.forEach(function (post, index) {
-      if (post.id === index) {
-        localStorage.removeItem(this);
-      }
-    });
-    localStorage.setItem('posts', JSON.stringify(posts))
+    localStorage.removeItem('posts');
   }
 }
 
@@ -171,13 +163,13 @@ class Store {
 document.addEventListener("DOMcontentLoaded", Store.displayPosts());
 
 // Event Listener for deleteRow
-document.getElementById("table-data").addEventListener("click", function (e) {
+document.querySelector('.button-primary').addEventListener("click", function (e) {
   // Instatiate new UI so that you can access the prototypes
   const ui = new UI();
   // Delete book
   ui.deleteRow(e.target);
   ui.showAlert("Day has been deleted", "success");
-  Store.removePost(e.target);
+  Store.removePost();
   // Remove from local storage
   e.preventDefault();
 });
