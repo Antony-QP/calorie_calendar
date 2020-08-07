@@ -12,28 +12,31 @@
 
 <body>
   <div class="container">
+    <h1>Calorie Counter</h1>
 
     <div class="form-container">
       <form id="form-info">
         <!-- Basic information -->
         <!-- Sex -->
         <div class="row">
-          <div class="three columns">
+          <div class="12 columns">
             <label for="name">Sex</label>
             <select id="sex" class="u-full-width" placeholder="sex">
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
+            </div>
           </div>
           <!-- Name -->
           <div class="row">
-            <div class="three columns">
+            <div class="twelve columns">
               <label for="name">Name</label>
               <input class="u-full-width" type="text" placeholder="input name" id="name">
             </div>
+            </div>
             <!-- Activity Level -->
             <div class="row">
-              <div class="three columns">
+              <div class="twelve columns">
                 <label for="activity-level">Level of Activity</label>
                 <select id="activity" class="u-full-width">
                   <option value="sedentary">Sedentary</option>
@@ -41,40 +44,45 @@
                   <option value="very-active">Very Active</option>
                 </select>
               </div>
+              </div>
               <!-- Age -->
               <div class="row">
-                <div class="three columns">
+                <div class="twelve columns">
                   <label for="age">Age</label>
                   <input class="u-full-width" type="text" placeholder="leave blank" id="age">
                 </div>
+                </div>
                 <!-- Daily allowance -->
                 <div class="row">
-                  <div class="three columns">
+                  <div class="twelve columns">
                     <label for="daily-allowance">Daily Allowance</label>
                     <input class="u-full-width" type="text" placeholder="leave blank" id="allowance">
                   </div>
+                  </div>
                   <!-- Breakfast -->
                   <div class="row">
-                    <div class="three columns">
+                    <div class="twelve columns">
                       <label for="breakfast-calories">Breakfast</label>
                       <input class="u-full-width" type="text" placeholder="input number of calories" id="breakfast">
                     </div>
+                    </div>
                     <!-- Lunch -->
                     <div class="row">
-                      <div class="three columns">
+                      <div class="twelve columns">
                         <label for="lunch-calories">Lunch</label>
                         <input class="u-full-width" type="text" placeholder="input number of calories" id="lunch">
                       </div>
+                      </div>
                       <!-- Dinner -->
                       <div class="row">
-                        <div class="three columns">
+                        <div class="twelve columns">
                           <label for="dinner-calories">Dinner</label>
                           <input class="u-full-width" type="text" placeholder="input number of calories" id="dinner">
                         </div>
                       </div>
-                      <input type="submit" value="submit">
+                      <input type="submit" value="submit" class="12 columns">
       </form>
-      <button class="button-primary">Clear table</button>
+      <button class="button-primary 12 columns">Clear table</button>
     </div>
 
     <!-- Table of results -->
