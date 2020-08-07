@@ -53,7 +53,7 @@ UI.prototype.addPostToList = function (post) {
 
 // Delete Row Function
 UI.prototype.deleteRow = function (target) {
-  if (target.className === "button-primary") {
+  if (target.className === "button-primary 12 columns") {
     tableData.innerHTML = '';
   }
   // console.log(target.parentElement.parentElement.childNodes[4])
