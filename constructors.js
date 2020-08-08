@@ -2,34 +2,46 @@ const form = document.querySelector("#form-info");
 const tableData = document.querySelector("#table-data");
 let idCounter = 0;
 
+function calculateCalories(age) {
+  let allowance = ''
+  if (age => 18) {
+    allowance = 2400;
+    console.log(allowance);
+    return allowance
+  }
+}
+
+
 // Post constructor
 function Post(
   sex,
   name,
   activity,
   age,
-  allowance,
   breakfast,
   lunch,
   dinner,
+  allowance,
   id
 ) {
   this.sex = sex;
   this.name = name;
   this.activity = activity;
   this.age = age;
-  this.allowance = allowance;
   this.breakfast = breakfast;
   this.lunch = lunch;
   this.dinner = dinner;
+  this.allowance = allowance;
   this.id = idCounter++;
 }
 
 // UI CONSTRUCTOR
 function UI() {}
 
+
 // UI PROTOTYPES
 UI.prototype.addPostToList = function (post) {
+  let allowance = '';
   // Create table row
   const tableRow = document.createElement("tr");
   // Log Date
@@ -41,13 +53,32 @@ UI.prototype.addPostToList = function (post) {
     parseFloat(post.lunch) +
     parseFloat(post.dinner);
   // Use API to check calorie intake (next step)
+  ;
+
+  let advisedCal = calculateCalories(post.age)
+  let difference = advisedCal - totalCal;
+  let color = ''
+
+  if (difference > 0) {
+    color = 'positive'
+  } else {
+    color = 'negative'
+  }
+
 
   // Append table row to table
   tableRow.innerHTML = `
     <td>${today}</td>
     <td>${totalCal}</<td>
-    <td id="postid">${post.id}</<td>
+    <td>${advisedCal}</td>
+    <td class="${color}">${difference}</td>
     `;
+
+  // if (difference > 0) {
+  //   document.querySelector('#table-difference').classList.add('positive');
+  // } else {
+  //   document.querySelector('#table-difference').classList.add('negative');
+  // }
   tableData.appendChild(tableRow);
 };
 
@@ -84,17 +115,17 @@ form.addEventListener("submit", function (e) {
   const name = document.querySelector("#name").value;
   const activity = document.querySelector("#activity").value;
   const age = document.querySelector("#age").value;
-  const allowance = document.querySelector("#allowance").value;
   const breakfast = document.querySelector("#breakfast").value;
   const lunch = document.querySelector("#lunch").value;
   const dinner = document.querySelector("#dinner").value;
+
+
 
   const post = new Post(
     sex,
     name,
     activity,
     age,
-    allowance,
     breakfast,
     lunch,
     dinner
@@ -107,7 +138,6 @@ form.addEventListener("submit", function (e) {
     name === "" ||
     activity === "" ||
     age === "" ||
-    allowance === "" ||
     breakfast === "" ||
     lunch === "" ||
     dinner === ""

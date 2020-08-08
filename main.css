@@ -31,3 +31,11 @@
 .error {
   background: red;
 }
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
