@@ -39,3 +39,11 @@
 .negative {
   color: red;
 }
+
+#deficit {
+  color: green;
+}
+
+#surplus {
+  color: red;
+}

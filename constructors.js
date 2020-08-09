@@ -57,11 +57,14 @@ UI.prototype.addPostToList = function (post) {
 
   let difference = advisedCal - totalCal;
   let color = ''
-
+  let posOrNeg = ''
   if (difference > 0) {
     color = 'positive'
+    posOrNeg = '-'
   } else {
     color = 'negative'
+    difference = difference * -1;
+    posOrNeg = '+'
   }
 
 
@@ -70,7 +73,7 @@ UI.prototype.addPostToList = function (post) {
     <td>${today}</td>
     <td>${totalCal}</<td>
     <td>${advisedCal}</td>
-    <td class="${color}">${difference}</td>
+    <td class="${color}">${posOrNeg}${difference}</td>
     `;
 
   // if (difference > 0) {
