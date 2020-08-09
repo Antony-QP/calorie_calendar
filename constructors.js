@@ -2,27 +2,6 @@ const form = document.querySelector("#form-info");
 const tableData = document.querySelector("#table-data");
 let idCounter = 0;
 
-// function calculateCalories(age) {
-//   let allowance = ''
-//   const activitySelection = document.querySelector('#activity')
-//   const dailyActivity = activitySelection.options[activitySelection.selectedIndex].text;
-
-//   if (age == 18 && dailyActivity === "Sedentary") {
-//     allowance = 2400;
-//     // return allowance
-//   } else if (age == 18 && dailyActivity === "Active") {
-//     allowance = 2800
-//   } else if (age == 18 && dailyActivity === "Very Active") {
-//     allowance = 3200
-//   } else {
-//     console.log("you need to be 18 to use this app")
-//   }
-//   console.log(allowance)
-//   console.log(dailyActivity);
-//   return allowance;
-// }
-
-
 // Post constructor
 function Post(
   sex,
@@ -65,8 +44,17 @@ UI.prototype.addPostToList = function (post) {
     parseFloat(post.dinner);
   // Use API to check calorie intake (next step)
   ;
+  let sexMenu = document.querySelector('#sex');
+  post.sex = sexMenu.options[sexMenu.selectedIndex].text;
 
-  let advisedCal = calculateCalories(post.age)
+
+  let advisedCal = ''
+  if (post.sex === "Male") {
+    advisedCal = calculateCaloriesMan(post.age)
+  } else {
+    advisedCal = calculateCaloriesWoman(post.age)
+  }
+
   let difference = advisedCal - totalCal;
   let color = ''
 
